@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\source\\repos\\yharnam-task\\yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Yharnam-Task\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
+              "RelativeToolTip": "Yharnam-Task\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-03T22:48:07.65Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
