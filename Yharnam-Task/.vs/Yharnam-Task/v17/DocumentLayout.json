@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\",
+  "WorkspaceRootPath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\source\\repos\\yharnam-task\\yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,12 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Yharnam-Task\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml.cs",
+              "RelativeToolTip": "Yharnam-Task\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T23:53:26.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\AppShell.xaml",
+              "RelativeDocumentMoniker": "Yharnam-Task\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\AppShell.xaml",
+              "RelativeToolTip": "Yharnam-Task\\AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-03T23:25:46.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\App.xaml",
+              "RelativeDocumentMoniker": "Yharnam-Task\\App.xaml",
+              "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\App.xaml",
+              "RelativeToolTip": "Yharnam-Task\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-03T23:25:43.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "Yharnam-Task\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MauiProgram.cs",
+              "RelativeToolTip": "Yharnam-Task\\MauiProgram.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T23:25:38.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
               "RelativeDocumentMoniker": "Yharnam-Task\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
               "RelativeToolTip": "Yharnam-Task\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-03T22:48:07.65Z",
               "EditorCaption": ""
