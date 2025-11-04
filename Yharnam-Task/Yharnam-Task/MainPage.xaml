@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Yharnam_Task.MainPage">
 
-    <Label>Yharnam Task!</Label>
+    <VerticalStackLayout>
+        <Label>Entidades Lunares</Label>
 
-</ContentPage>
+        <Label>Nope</Label>
+    </VerticalStackLayout>
+
+</ContentPage> 

@@ -26228,11 +26228,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\Yharnam-Task\\Yharnam-Task.csproj",
+      "projectUniqueName": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam-Task.csproj",
       "projectName": "Yharnam-Task",
-      "projectPath": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\Yharnam-Task\\Yharnam-Task.csproj",
+      "projectPath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam-Task.csproj",
       "packagesPath": "C:\\Users\\nopes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nopes\\source\\repos\\Yharnam-Task\\Yharnam-Task\\obj\\",
+      "outputPath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

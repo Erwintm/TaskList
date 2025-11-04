@@ -7,7 +7,7 @@
     Title="Yharnam_Task">
 
     <ShellContent
-        Title="Home"
+        Title="Yharnam Task!"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
