@@ -1,0 +1,166 @@
+## 🔹 Archivos y carpetas de Visual Studio
+
+.vs/
+[Bb]in/
+[Oo]bj/
+
+/.vs
+vs
+.vs
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.cachefile
+*.psess
+*.vsp
+*.vspscc
+*.vssscc
+
+## 🔹 Carpetas de compilación
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Mm]acCatalyst/
+[Ww]inUI/
+
+## 🔹 Archivos intermedios y cache de compilador
+*.aps
+*.ncb
+*.opendb
+*.VC.db
+*.VC.opendb
+*.ipch
+*.tlog
+*.lastbuildstate
+*.vsidx
+*.v2
+*.cache
+*.bak
+*.backup
+*.tmp
+*.temp
+
+## 🔹 Archivos generados por el compilador
+*.obj
+*.exe
+*.dll
+*.pdb
+*.idb
+*.ilk
+*.lib
+*.exp
+*.bin
+*.debug
+*.mdb
+*.bsc
+*.rsp
+
+## 🔹 Archivos de publicación y paquetes
+*.publish.xml
+*.pubxml
+*.azurePubxml
+*.pubxml.user
+*.publishproj
+*.zip
+*.tar.gz
+*.tgz
+*.msi
+*.msm
+*.msp
+*.nupkg
+
+## 🔹 Archivos de tests y reportes
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.coverage
+*.coveragexml
+*.codecov
+*.gcov
+*.lcov
+
+## 🔹 Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+## 🔹 Archivos de Rider, JetBrains y similares
+.idea/
+*.iml
+
+## 🔹 Archivos de configuración local
+*.local.json
+*.development.json
+
+## 🔹 Archivos de análisis, telemetry, restore
+*.vspscc
+*.vssscc
+*.vsp
+*.vsmdi
+*.coverage
+*.tss
+*.ncrunch*
+_ReSharper*/
+_ReSharper.Caches/
+*.dotCover
+*.sln.docstates
+
+## 🔹 Configuración temporal de MAUI
+Platforms/Android/bin/
+Platforms/Android/obj/
+Platforms/iOS/bin/
+Platforms/iOS/obj/
+Platforms/MacCatalyst/bin/
+Platforms/MacCatalyst/obj/
+Platforms/Windows/bin/
+Platforms/Windows/obj/
+
+## 🔹 Archivos de logs, dumps y diagnóstico
+*.log
+*.dmp
+*.stackdump
+
+## 🔹 Archivos de configuración de herramientas externas
+*.launchSettings.json
+*.editorconfig.cache
+
+## 🔹 Archivos de configuración de dispositivo y simulador
+*.adb
+*.keystore
+*.pem
+*.p12
+
+## 🔹 Archivos de respaldo de merge o conflictos
+*.orig
+*.rej
+*.merge_file*
+
+## 🔹 Archivos del control de versiones de terceros
+*.svn/
+*.hg/
+*.git/
+
+## 🔹 Archivos de VS Live Share
+.vsls.json
+.liveshare/
+
+## 🔹 Archivos generados por .NET MAUI o MSBuild
+*.assets.cache
+project.lock.json
+project.fragment.lock.json
+artifacts/
+.nuget/
+packages/
+*.ncrunchsolution
