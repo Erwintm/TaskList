@@ -26228,9 +26228,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam-Task.csproj",
-      "projectName": "Yharnam-Task",
-      "projectPath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam-Task.csproj",
+      "projectUniqueName": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam_Task.csproj",
+      "projectName": "Yharnam_Task",
+      "projectPath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam_Task.csproj",
       "packagesPath": "C:\\Users\\nopes\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\obj\\",
       "projectStyle": "PackageReference",

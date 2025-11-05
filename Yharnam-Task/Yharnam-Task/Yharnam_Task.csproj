@@ -65,9 +65,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Model\" />
-	  <Folder Include="ViewModel\" />
-	  <Folder Include="View\" />
+	  <MauiXaml Update="View\CorePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\PreferenciasPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

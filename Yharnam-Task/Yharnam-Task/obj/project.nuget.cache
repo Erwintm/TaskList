@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "obEW2TZQI6k=",
+  "dgSpecHash": "n73cs8O10wg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam-Task.csproj",
+  "projectFilePath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam_Task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nopes\\.nuget\\packages\\googlegson\\2.11.0.5\\googlegson.2.11.0.5.nupkg.sha512",
     "C:\\Users\\nopes\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",

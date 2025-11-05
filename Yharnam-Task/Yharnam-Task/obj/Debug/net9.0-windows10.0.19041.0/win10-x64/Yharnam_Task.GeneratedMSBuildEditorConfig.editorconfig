@@ -1,0 +1,71 @@
+is_global = true
+build_property.TargetFramework = net9.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Yharnam_Task
+build_property.ProjectDir = C:\Users\nopes\OneDrive\Escritorio\Yharnam-Task\TaskList\Yharnam-Task\Yharnam-Task\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTAotWarningLevel = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/View/CorePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.View.CorePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\CorePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\CorePage.xaml
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/View/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.View.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\MainPage.xaml
+
+[C:/Users/nopes/OneDrive/Escritorio/Yharnam-Task/TaskList/Yharnam-Task/Yharnam-Task/View/PreferenciasPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Yharnam_Task.View.PreferenciasPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\PreferenciasPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\PreferenciasPage.xaml
