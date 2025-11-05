@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Yharnam-Task\\MainPage.xaml",
               "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
               "RelativeToolTip": "Yharnam-Task\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-05T22:14:45.322Z",
               "EditorCaption": ""
@@ -87,8 +87,7 @@
               "RelativeToolTip": "Yharnam-Task\\Data\\configuracion.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T18:29:52.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T18:29:52.456Z"
             },
             {
               "$type": "Document",
