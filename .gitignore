@@ -1,4 +1,9 @@
 ## 🔹 Archivos y carpetas de Visual Studio
+
+.vs/
+[Bb]in/
+[Oo]bj/
+
 /.vs
 vs
 .vs
