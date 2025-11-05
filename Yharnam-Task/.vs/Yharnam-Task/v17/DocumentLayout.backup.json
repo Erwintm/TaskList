@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\data\\configuracion.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\data\\configuracion.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\view\\corepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\view\\corepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\view\\preferenciaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\view\\preferenciaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\viewmodel\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\viewmodel\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\view\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\viewmodel\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\viewmodel\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\view\\preferenciaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\view\\preferenciaspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\view\\corepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\view\\corepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\data\\configuracion.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\data\\configuracion.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\viewmodel\\tareaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,20 +39,20 @@
       "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\models\\configuracionusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\services\\tareaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\services\\tareaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam-Task.csproj|solutionrelative:yharnam-task\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\yharnam_task.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\yharnam_task.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\services\\tareaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\services\\tareaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\data\\tareas.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,6 +67,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Yharnam-Task\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
+              "RelativeToolTip": "Yharnam-Task\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-05T22:24:54.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "configuracion.json",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Data\\configuracion.json",
               "RelativeDocumentMoniker": "Yharnam-Task\\Data\\configuracion.json",
@@ -75,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CorePage.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\View\\CorePage.xaml",
               "RelativeDocumentMoniker": "Yharnam-Task\\View\\CorePage.xaml",
@@ -88,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PreferenciasPage.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\View\\PreferenciasPage.xaml",
               "RelativeDocumentMoniker": "Yharnam-Task\\View\\PreferenciasPage.xaml",
@@ -101,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\View\\MainPage.xaml",
               "RelativeDocumentMoniker": "Yharnam-Task\\View\\MainPage.xaml",
@@ -114,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ConfiguracionViewModel.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\ViewModel\\ConfiguracionViewModel.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\ViewModel\\ConfiguracionViewModel.cs",
@@ -127,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TareaViewModel.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\ViewModel\\TareaViewModel.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\ViewModel\\TareaViewModel.cs",
@@ -135,12 +152,11 @@
               "RelativeToolTip": "Yharnam-Task\\ViewModel\\TareaViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T18:26:05.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T18:26:05.867Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\Services\\UsuarioService.cs",
@@ -148,12 +164,11 @@
               "RelativeToolTip": "Yharnam-Task\\Services\\UsuarioService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T18:25:02.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T18:25:02.594Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ConfiguracionUsuario.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Models\\ConfiguracionUsuario.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\Models\\ConfiguracionUsuario.cs",
@@ -161,8 +176,7 @@
               "RelativeToolTip": "Yharnam-Task\\Models\\ConfiguracionUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T18:24:13.281Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T18:24:13.281Z"
             },
             {
               "$type": "Document",
@@ -174,12 +188,11 @@
               "RelativeToolTip": "Yharnam-Task\\Models\\Tarea.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T18:18:59.011Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T18:18:59.011Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "TareaService.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Services\\TareaService.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\Services\\TareaService.cs",
@@ -187,12 +200,11 @@
               "RelativeToolTip": "Yharnam-Task\\Services\\TareaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T18:12:48.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T18:12:48.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "tareas.json",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Data\\tareas.json",
               "RelativeDocumentMoniker": "Yharnam-Task\\Data\\tareas.json",
@@ -200,21 +212,19 @@
               "RelativeToolTip": "Yharnam-Task\\Data\\tareas.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-05T17:57:17.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:57:17.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Yharnam-Task.csproj",
+              "DocumentIndex": 10,
+              "Title": "Yharnam_Task.csproj",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam_Task.csproj",
               "RelativeDocumentMoniker": "Yharnam-Task\\Yharnam_Task.csproj",
               "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam_Task.csproj",
               "RelativeToolTip": "Yharnam-Task\\Yharnam_Task.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-05T17:32:01.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-05T17:32:01.751Z"
             }
           ]
         }

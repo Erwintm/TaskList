@@ -6,7 +6,7 @@
     <VerticalStackLayout>
         <Label>Entidades Lunares</Label>
 
-        <Label>Nope</Label>
+        <Label>Nope</Label
     </VerticalStackLayout>
 
 </ContentPage> 
