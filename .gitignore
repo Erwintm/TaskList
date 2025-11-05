@@ -1,4 +1,7 @@
 ## 🔹 Archivos y carpetas de Visual Studio
+/.vs
+vs
+.vs
 .vs/
 .vscode/
 .idea/
