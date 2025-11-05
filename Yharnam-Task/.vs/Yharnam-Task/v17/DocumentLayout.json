@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|c:\\users\\nopes\\onedrive\\escritorio\\yharnam-task\\tasklist\\yharnam-task\\yharnam-task\\viewmodel\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FC68323A-B813-4580-98F7-9765D7D55FD7}|Yharnam-Task\\Yharnam_Task.csproj|solutionrelative:yharnam-task\\viewmodel\\configuracionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -62,8 +66,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "Yharnam-Task\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml.cs",
+              "RelativeToolTip": "Yharnam-Task\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T23:11:08.881Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -72,14 +89,14 @@
               "RelativeDocumentMoniker": "Yharnam-Task\\MainPage.xaml",
               "ToolTip": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\MainPage.xaml",
               "RelativeToolTip": "Yharnam-Task\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-05T22:24:54.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "configuracion.json",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Data\\configuracion.json",
               "RelativeDocumentMoniker": "Yharnam-Task\\Data\\configuracion.json",
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CorePage.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\View\\CorePage.xaml",
               "RelativeDocumentMoniker": "Yharnam-Task\\View\\CorePage.xaml",
@@ -103,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PreferenciasPage.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\View\\PreferenciasPage.xaml",
               "RelativeDocumentMoniker": "Yharnam-Task\\View\\PreferenciasPage.xaml",
@@ -115,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\View\\MainPage.xaml",
               "RelativeDocumentMoniker": "Yharnam-Task\\View\\MainPage.xaml",
@@ -127,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ConfiguracionViewModel.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\ViewModel\\ConfiguracionViewModel.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\ViewModel\\ConfiguracionViewModel.cs",
@@ -139,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TareaViewModel.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\ViewModel\\TareaViewModel.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\ViewModel\\TareaViewModel.cs",
@@ -151,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\Services\\UsuarioService.cs",
@@ -163,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ConfiguracionUsuario.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Models\\ConfiguracionUsuario.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\Models\\ConfiguracionUsuario.cs",
@@ -175,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Tarea.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Models\\Tarea.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\Models\\Tarea.cs",
@@ -187,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "TareaService.cs",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Services\\TareaService.cs",
               "RelativeDocumentMoniker": "Yharnam-Task\\Services\\TareaService.cs",
@@ -199,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "tareas.json",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Data\\tareas.json",
               "RelativeDocumentMoniker": "Yharnam-Task\\Data\\tareas.json",
@@ -211,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Yharnam_Task.csproj",
               "DocumentMoniker": "C:\\Users\\nopes\\OneDrive\\Escritorio\\Yharnam-Task\\TaskList\\Yharnam-Task\\Yharnam-Task\\Yharnam_Task.csproj",
               "RelativeDocumentMoniker": "Yharnam-Task\\Yharnam_Task.csproj",
