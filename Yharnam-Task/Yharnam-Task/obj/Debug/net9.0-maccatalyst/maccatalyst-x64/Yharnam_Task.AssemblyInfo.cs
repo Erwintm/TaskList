@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Yharnam_Task")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+220b3251755008b29f041e89ea2dfd7330e039c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+871622470f60b20ed6b3ccf5eae1022b3e1b5687")]
 [assembly: System.Reflection.AssemblyProductAttribute("Yharnam_Task")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Yharnam_Task")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
