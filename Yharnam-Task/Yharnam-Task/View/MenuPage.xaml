@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Yharnam_Task.View.MenuPage"
+             Title="Yharnam Task List">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <!-- Header -->
+            <Label Text="Yharnam Task List" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   Margin="10" />
+
+            <!-- Formulario para agregar tareas -->
+            <Frame BackgroundColor="#F0F0F0" Padding="15" CornerRadius="10">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Agregar Nueva Tarea" FontSize="18" FontAttributes="Bold" />
+
+                    <Entry 
+                        Placeholder="Título de la tarea"
+                        Text="{Binding NuevoTitulo}"
+                        Margin="10" />
+
+                    <Entry 
+                        Placeholder="Descripción (opcional)"
+                        Text="{Binding NuevaDescripcion}"
+                        Margin="10" />
+
+                    <Button 
+                        Text="Agregar Tarea"
+                        Command="{Binding AgregarTareaCommand}"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Margin="10" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Lista de tareas -->
+            <Label Text="Tareas Pendientes" FontSize="20" FontAttributes="Bold" />
+
+            <CollectionView ItemsSource="{Binding Tareas}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="White" Padding="15" CornerRadius="10" 
+                               Margin="0,5" BorderColor="LightGray">
+                            <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto, Auto">
+                                <!-- Título -->
+                                <Label Grid.Row="0" Grid.Column="0" 
+                                       Text="{Binding Titulo}" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" />
+
+                                <!-- Botón Eliminar -->
+                                <Button Grid.Row="0" Grid.Column="1" 
+                                        Text="❌" 
+                                        FontSize="12"
+                                        BackgroundColor="Transparent"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTareaCommand}"
+                                        CommandParameter="{Binding .}" />
+
+                                <!-- Descripción -->
+                                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                       Text="{Binding Descripcion}" 
+                                       FontSize="14" 
+                                       TextColor="Gray" />
+
+                                <!-- Información adicional -->
+                                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                       Text="{Binding FechaCreacion, StringFormat='Creada: {0:dd/MM/yyyy HH:mm}'}" 
+                                       FontSize="12" 
+                                       TextColor="DarkGray" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
