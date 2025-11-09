@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using CommunityToolkit.Maui; 
+using CommunityToolkit.Maui;
 
 namespace Yharnam_Task;
 
@@ -8,6 +8,7 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
+
         builder
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit() 

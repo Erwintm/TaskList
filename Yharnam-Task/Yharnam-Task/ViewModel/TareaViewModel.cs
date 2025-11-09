@@ -7,42 +7,83 @@ namespace Yharnam_Task.ViewModel
 {
     public class TareaViewModel : BindableObject
     {
-        private readonly TareaService _tareaService;
-        private string _nuevoTitulo = string.Empty;
-        private string _nuevaDescripcion = string.Empty;
+        private readonly TareaService tareaService;
+        private ObservableCollection<Tarea> tareas;
 
-        public TareaViewModel()
+        public ObservableCollection<Tarea> Tareas
         {
-            _tareaService = new TareaService();
-            Tareas = new ObservableCollection<Tarea>();
-            AgregarTareaCommand = new Command(async () => await AgregarTarea());
+            get => tareas;
+            set
+            {
+                tareas = value;
+                OnPropertyChanged();
+            }
         }
 
-        public ObservableCollection<Tarea> Tareas { get; set; }
-
+        // Campos de entrada
+        private string nuevoTitulo;
         public string NuevoTitulo
         {
-            get => _nuevoTitulo;
+            get => nuevoTitulo;
+            set { nuevoTitulo = value; OnPropertyChanged(); }
+        }
+
+        private string nuevaDescripcion;
+        public string NuevaDescripcion
+        {
+            get => nuevaDescripcion;
+            set { nuevaDescripcion = value; OnPropertyChanged(); }
+        }
+
+        private DateTime fechaEntrega = DateTime.Today;
+        public DateTime FechaEntrega
+        {
+            get => fechaEntrega;
+            set { fechaEntrega = value; OnPropertyChanged(); }
+        }
+
+        private string dificultadSeleccionada = "Media";
+        public string DificultadSeleccionada
+        {
+            get => dificultadSeleccionada;
+            set { dificultadSeleccionada = value; OnPropertyChanged(); }
+        }
+
+        private double tiempoEstimadoHoras = 1;
+        public double TiempoEstimadoHoras
+        {
+            get => tiempoEstimadoHoras;
             set
             {
-                _nuevoTitulo = value;
-                OnPropertyChanged();
+                if (tiempoEstimadoHoras != value)
+                {
+                    tiempoEstimadoHoras = value;
+                    OnPropertyChanged();
+                    OnPropertyChanged(nameof(TiempoDisplay));
+                }
             }
         }
 
-        public string NuevaDescripcion
-        {
-            get => _nuevaDescripcion;
-            set
-            {
-                _nuevaDescripcion = value;
-                OnPropertyChanged();
-            }
-        }
+        public string TiempoDisplay => $"{TiempoEstimadoHoras:0.##} h";
 
         public ICommand AgregarTareaCommand { get; }
 
-        private async Task AgregarTarea()
+        public TareaViewModel()
+        {
+            tareaService = new TareaService();
+            Tareas = new ObservableCollection<Tarea>();
+
+            AgregarTareaCommand = new Command(async () => await AgregarTareaAsync());
+
+            _ = CargarTareasAsync();
+        }
+
+        private async Task CargarTareasAsync()
+        {
+            Tareas = await tareaService.CargarTareasAsync();
+        }
+
+        private async Task AgregarTareaAsync()
         {
             if (string.IsNullOrWhiteSpace(NuevoTitulo))
                 return;
@@ -51,16 +92,22 @@ namespace Yharnam_Task.ViewModel
             {
                 Titulo = NuevoTitulo,
                 Descripcion = NuevaDescripcion,
-                Prioridad = 0,
-                Dificultad = "Media"
+                FechaEntrega = FechaEntrega,
+                Dificultad = DificultadSeleccionada,
+                TiempoEstimado = TimeSpan.FromHours(TiempoEstimadoHoras),
+                FechaCreacion = DateTime.Now,
+                Completada = false
             };
 
-            await _tareaService.AddTareaAsync(nuevaTarea);
             Tareas.Add(nuevaTarea);
+            await tareaService.GuardarTareasAsync(Tareas);
 
             // Limpiar campos
             NuevoTitulo = string.Empty;
             NuevaDescripcion = string.Empty;
+            FechaEntrega = DateTime.Today;
+            DificultadSeleccionada = "Media";
+            TiempoEstimadoHoras = 1;
         }
     }
 }

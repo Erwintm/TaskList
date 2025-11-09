@@ -11,7 +11,10 @@ public partial class MenuPage : ContentPage
 
     private void OnPopupButtonClicked(object sender, EventArgs e)
     {
-        var popup = new PopupView();
+        var popup = new PopupView
+        {
+            BindingContext = App.MainViewModel 
+        };
         this.ShowPopup(popup);
     }
 }

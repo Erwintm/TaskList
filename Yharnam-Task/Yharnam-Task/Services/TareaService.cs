@@ -1,50 +1,35 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.Text.Json;
 using Yharnam_Task.Models;
 
 namespace Yharnam_Task.Services
 {
     public class TareaService
     {
-        private List<Tarea> _tareas = new List<Tarea>();
-        private int _nextId = 1;
+        private readonly string filePath;
 
         public TareaService()
         {
-            _tareas.Add(new Tarea
-            {
-                Id = _nextId++,
-                Titulo = "Configurar entorno de desarrollo",
-                Descripcion = "Instalar Visual Studio, configurar MAUI y probar el simulador.",
-                FechaCreacion = DateTime.Parse("2025-11-05T12:00:00"),
-                FechaEntrega = null,
-                Dificultad = "Alta",
-                TiempoEstimado = TimeSpan.FromHours(1.5),
-                Completada = false,
-                Prioridad = 1
-            });
-
-            _tareas.Add(new Tarea
-            {
-                Id = _nextId++,
-                Titulo = "tarea 2",
-                Descripcion = "esto es una prueba",
-                FechaCreacion = DateTime.Parse("2025-11-05T13:00:00"),
-                FechaEntrega = null,
-                Dificultad = "Media",
-                TiempoEstimado = null,
-                Completada = false,
-                Prioridad = 0
-            });
+            filePath = Path.Combine(FileSystem.AppDataDirectory, "tareas.json");
         }
 
-        public Task<Tarea> AddTareaAsync(Tarea tarea)
+        public async Task<ObservableCollection<Tarea>> CargarTareasAsync()
         {
-            tarea.Id = _nextId++;
-            tarea.FechaCreacion = DateTime.Now;
-            _tareas.Add(tarea);
-            return Task.FromResult(tarea);
+            if (!File.Exists(filePath))
+                return new ObservableCollection<Tarea>();
+
+            using var stream = File.OpenRead(filePath);
+            var tareas = await JsonSerializer.DeserializeAsync<ObservableCollection<Tarea>>(stream)
+                          ?? new ObservableCollection<Tarea>();
+
+            return tareas;
+        }
+
+        public async Task GuardarTareasAsync(ObservableCollection<Tarea> tareas)
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            using var stream = File.Create(filePath);
+            await JsonSerializer.SerializeAsync(stream, tareas, options);
         }
     }
 }

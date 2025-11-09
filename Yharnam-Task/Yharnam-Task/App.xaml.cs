@@ -1,14 +1,15 @@
-﻿using Yharnam_Task.View;
+﻿using Yharnam_Task.ViewModel;
+using Yharnam_Task.View;
 
-namespace Yharnam_Task
+namespace Yharnam_Task;
+
+public partial class App : Application
 {
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+    public static TareaViewModel MainViewModel { get; } = new TareaViewModel();
 
-            MainPage = new MenuPage();
-        }
+    public App()
+    {
+        InitializeComponent();
+        MainPage = new MenuPage();
     }
 }
