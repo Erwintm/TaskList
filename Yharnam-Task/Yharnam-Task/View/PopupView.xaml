@@ -85,6 +85,7 @@
                                             Date="{Binding FechaEntrega}"
                                             MinimumDate="{Binding Today}"
                                             BackgroundColor="Transparent"
+                                            Format="dd/MM/yyyy"
                                             Margin="12,0"
                                             TextColor="White" />
                         </VerticalStackLayout>
@@ -130,13 +131,13 @@
                                            HorizontalOptions="Center"/>
 
                                 <Slider x:Name="TiempoSlider"
-                                            Minimum="0.25"
-                                            Maximum="8.0"
-                                            Value="{Binding TiempoEstimadoHoras}"
-                                            MinimumTrackColor="BlueViolet"
-                                            MaximumTrackColor="Gray"
-                                            ThumbColor="BlueViolet"
-                                            HeightRequest="30"/>
+                                        Minimum="15"
+                                        Maximum="480"
+                                        Value="{Binding TiempoEstimadoMinutos}"
+                                        MinimumTrackColor="BlueViolet"
+                                        MaximumTrackColor="Gray"
+                                        ThumbColor="BlueViolet"
+                                        HeightRequest="30"/>
 
                                 <Grid ColumnDefinitions="*, *" 
                                           HorizontalOptions="Fill"
