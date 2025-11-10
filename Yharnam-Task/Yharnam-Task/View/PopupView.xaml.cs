@@ -16,14 +16,17 @@ namespace Yharnam_Task.View
         {
             if (BindingContext is TareaViewModel viewModel)
             {
-                if (viewModel.AgregarTareaCommand.CanExecute(null))
+                bool guardada = await viewModel.AgregarTareaAsync();
+
+                if (guardada)
                 {
-                    viewModel.AgregarTareaCommand.Execute(null);
+                    await this.CloseAsync();
+                    await Application.Current.MainPage.DisplayAlert(
+                        "Tarea guardada",
+                        "La información se ha guardado correctamente.",
+                        "Aceptar");
                 }
             }
-
-            await this.CloseAsync();
-            await Application.Current.MainPage.DisplayAlert("Tarea guardada", "La información se ha guardado correctamente.", "Aceptar");
         }
 
         private async void CerrarPopup_Clicked(object sender, System.EventArgs e)

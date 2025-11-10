@@ -15,7 +15,6 @@
         <ScrollView>
             <VerticalStackLayout Spacing="25" Padding="20">
                 
-                <!-- Header -->
                 <VerticalStackLayout Spacing="15" Margin="0,40,0,0">
                     <Label Text="Yharnam Task List" 
                            FontSize="28" 
@@ -45,7 +44,6 @@
                     </Grid>
                 </VerticalStackLayout>
 
-                <!-- Tasks List -->
                 <CollectionView ItemsSource="{Binding Tareas}">
                     <CollectionView.EmptyView>
                         <VerticalStackLayout HorizontalOptions="Center" 
@@ -78,7 +76,6 @@
                                       ColumnDefinitions="*,Auto"
                                       RowSpacing="8">
                                     
-                                    <!-- Title -->
                                     <Label Grid.Row="0" Grid.Column="0"
                                            Text="{Binding Titulo}" 
                                            FontAttributes="Bold" 
@@ -86,26 +83,22 @@
                                            TextColor="White"
                                            LineBreakMode="TailTruncation"/>
                                     
-                                    <!-- Due Date -->
                                     <Label Grid.Row="0" Grid.Column="1"
                                            Text="{Binding FechaEntrega, StringFormat='{0:dd/MM}'}" 
                                            FontSize="11" 
                                            TextColor="DarkGray"
                                            HorizontalOptions="End"/>
                                     
-                                    <!-- Description -->
                                     <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                                            Text="{Binding Descripcion}" 
                                            FontSize="13" 
                                            TextColor="LightGray"
                                            LineBreakMode="TailTruncation"/>
                                     
-                                    <!-- Difficulty & Time -->
                                     <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                                           ColumnDefinitions="Auto,*,Auto"
                                           VerticalOptions="Center">
                                         
-                                        <!-- Difficulty Badge -->
                                         <Frame Grid.Column="0"
                                                BackgroundColor="{Binding DificultadColor}"
                                                Padding="8,4"
@@ -117,7 +110,6 @@
                                                    TextColor="White"/>
                                         </Frame>
                                         
-                                        <!-- Estimated Time -->
                                         <Label Grid.Column="2"
                                                Text="{Binding TiempoEstimadoHoras, StringFormat='{0:F1}h'}" 
                                                FontSize="11" 
@@ -126,7 +118,6 @@
                                                HorizontalOptions="End"/>
                                     </Grid>
                                     
-                                    <!-- Progress Bar -->
                                     <BoxView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
                                              HeightRequest="4"
                                              Color="#2A2A2A"
@@ -147,7 +138,6 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- Floating Action Button -->
         <Button Text="+" 
                 FontSize="24"
                 BackgroundColor="BlueViolet"
