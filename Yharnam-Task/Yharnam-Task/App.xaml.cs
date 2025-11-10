@@ -1,15 +1,15 @@
-﻿namespace Yharnam_Task
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
-        }
+﻿using Yharnam_Task.ViewModel;
+using Yharnam_Task.View;
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+namespace Yharnam_Task;
+
+public partial class App : Application
+{
+    public static TareaViewModel MainViewModel { get; } = new TareaViewModel();
+
+    public App()
+    {
+        InitializeComponent();
+        MainPage = new MenuPage();
     }
 }
