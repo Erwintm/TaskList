@@ -141,8 +141,14 @@ namespace Yharnam_Task.ViewModel
             if (TiempoEstimadoMinutos < 15)
                 return "El tiempo estimado debe ser al menos de 15 minutos.";
 
+            if (TiempoEstimadoMinutos < 15)
+                return "El tiempo estimado debe ser como máximmo 8 horas.";
+
+            if (TiempoEstimadoMinutos > 480)
+                return "El tiempo estimado debe ser al menos de 15 minutos.";
+
             if (!string.IsNullOrEmpty(NuevaDescripcion) && NuevaDescripcion.Length > 100)
-                return "La descripción no debe exceder los 500 caracteres.";
+                return "La descripción no debe exceder los 50 caracteres.";
 
             return "Good";
         }
