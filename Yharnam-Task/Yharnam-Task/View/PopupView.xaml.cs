@@ -9,7 +9,6 @@ namespace Yharnam_Task.View
         {
             InitializeComponent();
 
-            // Establecer el BindingContext
             this.BindingContext = new TareaViewModel();
         }
 
@@ -17,7 +16,6 @@ namespace Yharnam_Task.View
         {
             if (BindingContext is TareaViewModel viewModel)
             {
-                // Ejecutar el comando para agregar tarea
                 if (viewModel.AgregarTareaCommand.CanExecute(null))
                 {
                     viewModel.AgregarTareaCommand.Execute(null);
@@ -25,6 +23,7 @@ namespace Yharnam_Task.View
             }
 
             await this.CloseAsync();
+            await Application.Current.MainPage.DisplayAlert("Tarea guardada", "La información se ha guardado correctamente.", "Aceptar");
         }
 
         private async void CerrarPopup_Clicked(object sender, System.EventArgs e)
