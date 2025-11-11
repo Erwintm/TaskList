@@ -95,21 +95,8 @@ namespace Yharnam_Task.ViewModel
 
         private async Task CargarTareasAsync()
         {
-            var tareas = await tareaService.CargarTareasAsync();
-
-            var usuarioService = new UsuarioService();
-            var prefs = await usuarioService.GetUsuarioAsync();
-
-            if (prefs != null)
-            {
-                tareas = new ObservableCollection<Tarea>(
-                    tareas.OrderByDescending(t => TareaPrioridadHelper.CalcularPrioridad(t, prefs))
-                );
-            }
-
-            Tareas = tareas;
+            Tareas = await tareaService.CargarTareasAsync();
         }
-
 
         public async Task<bool> AgregarTareaAsync()
         {
@@ -131,42 +118,17 @@ namespace Yharnam_Task.ViewModel
                 Completada = false
             };
 
-            try
-            {
-                var usuarioService = new UsuarioService();
-                var prefs = await usuarioService.GetUsuarioAsync();
+            Tareas.Add(nuevaTarea);
+            await tareaService.GuardarTareasAsync(Tareas);
 
-                double prioridad = TareaPrioridadHelper.CalcularPrioridad(nuevaTarea, prefs);
-                nuevaTarea.PrioridadCalculada = prioridad;
+            NuevoTitulo = string.Empty;
+            NuevaDescripcion = string.Empty;
+            FechaEntrega = DateTime.Today;
+            DificultadSeleccionada = "Media";
+            TiempoEstimadoMinutos = 60;
 
-                Console.WriteLine($"✅ Prioridad calculada: {prioridad}");
-
-                Tareas.Add(nuevaTarea);
-
-                var tareasOrdenadas = new ObservableCollection<Tarea>(
-                    Tareas.OrderByDescending(t => t.PrioridadCalculada)
-                );
-
-                Tareas = tareasOrdenadas;
-
-                await tareaService.GuardarTareasAsync(Tareas);
-
-                NuevoTitulo = string.Empty;
-                NuevaDescripcion = string.Empty;
-                FechaEntrega = DateTime.Today;
-                DificultadSeleccionada = "Media";
-                TiempoEstimadoMinutos = 60;
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"❌ Error al agregar tarea: {ex.Message}");
-                await Application.Current.MainPage.DisplayAlert("Error", "No se pudo agregar la tarea.", "Aceptar");
-                return false;
-            }
+            return true;
         }
-
 
         private string ValidarCampos()
         {

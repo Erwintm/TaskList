@@ -1,14 +1,16 @@
 ﻿#if WINDOWS
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
+using Microsoft.UI.Xaml;
 using WinRT.Interop;
-using Microsoft.Maui.LifecycleEvents;
 #endif
 
+using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using Yharnam_Task.Services;
 using Yharnam_Task.ViewModel;
 using Yharnam_Task.View;
+using Microsoft.Maui.LifecycleEvents;
 
 namespace Yharnam_Task;
 
