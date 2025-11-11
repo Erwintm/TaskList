@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Yharnam_Task.Services;
 using Yharnam_Task.View;
+using Yharnam_Task.Models;
 
 namespace Yharnam_Task.ViewModel;
 
@@ -38,6 +39,14 @@ public partial class LoginViewModel : ObservableObject
             IsBusy = true;
             await _usuarioService.SaveUsuarioAsync(Nombre);
 
+            var prefs = new ConfiguracionUsuario();
+
+            prefs.PreferenciaDificultad = await MostrarPopupAsync("¿Qué dificultad prefieres?", new[] { "Fácil", "Normal", "Difícil" });
+            prefs.PreferenciaPrioridad = await MostrarPopupAsync("¿Qué prioridad te interesa?", new[] { "Alta", "Media", "Baja" });
+            prefs.PreferenciaDuracion = await MostrarPopupAsync("¿Qué duración te gusta?", new[] { "Corta", "Media", "Larga" });
+
+            await _usuarioService.SavePreferenciasAsync(prefs);
+
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 Application.Current!.MainPage = new MenuPage();
@@ -48,4 +57,11 @@ public partial class LoginViewModel : ObservableObject
             IsBusy = false;
         }
     }
+
+    private async Task<string> MostrarPopupAsync(string pregunta, string[] opciones)
+    {
+        string respuesta = await Application.Current!.MainPage.DisplayActionSheet(pregunta, "Cancelar", null, opciones);
+        return respuesta ?? "";
+    }
+
 }
