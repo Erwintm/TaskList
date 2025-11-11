@@ -14,7 +14,7 @@
                HorizontalOptions="Center" 
                VerticalOptions="Center"
                WidthRequest="400"
-               HeightRequest="720"
+               HeightRequest="620"
                HasShadow="True"
                BorderColor="DimGray"
                Shadow="Dark">
