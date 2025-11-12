@@ -13,11 +13,7 @@
 
 		<ApplicationTitle>Yharnam-Task</ApplicationTitle>
 
-		<!--Holap-->
-
 		<!-- App Identifier -->
-=======
->>>>>>> main
 		<ApplicationId>com.companyname.yharnamtask</ApplicationId>
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
@@ -59,7 +55,6 @@
 		<!-- Community Toolkit -->
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.3.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-
 	</ItemGroup>
 
 	<ItemGroup>
