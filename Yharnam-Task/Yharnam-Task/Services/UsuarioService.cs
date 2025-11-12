@@ -6,8 +6,7 @@ namespace Yharnam_Task.Services;
 public class UsuarioService
 {
     private const string FileName = "configuracion.json";
-    private readonly string _filePath =
-        Path.Combine(FileSystem.AppDataDirectory, FileName);
+    private readonly string _filePath = Path.Combine(FileSystem.AppDataDirectory, FileName);
 
     private static readonly JsonSerializerOptions _jsonOpts = new()
     {
@@ -21,8 +20,7 @@ public class UsuarioService
 
         try
         {
-            using var fs = File.OpenRead(_filePath);
-            var cfg = await JsonSerializer.DeserializeAsync<ConfiguracionUsuario>(fs, _jsonOpts);
+            var cfg = await LoadAsync();
             return cfg != null && !string.IsNullOrWhiteSpace(cfg.Nombre);
         }
         catch { return false; }
@@ -31,47 +29,26 @@ public class UsuarioService
     public async Task<ConfiguracionUsuario?> GetUsuarioAsync()
     {
         if (!File.Exists(_filePath)) return null;
-
-        using var fs = File.OpenRead(_filePath);
-        return await JsonSerializer.DeserializeAsync<ConfiguracionUsuario>(fs, _jsonOpts);
+        return await LoadAsync();
     }
 
     public async Task SaveUsuarioAsync(string nombre)
     {
-        var cfg = await GetUsuarioAsync() ?? new ConfiguracionUsuario();
+        var cfg = await LoadAsync() ?? new ConfiguracionUsuario();
         cfg.Nombre = nombre.Trim();
         await SaveAsync(cfg);
     }
 
     public async Task SavePrioridadesAsync(string primera, string segunda, string tercera)
     {
-        var configuracion = await LoadConfiguracionAsync();
-
-        configuracion.OrdenPrioridades = new List<string> { primera, segunda, tercera };
-
-        await SaveConfiguracionAsync(configuracion);
-    }
-
-    private async Task SaveConfiguracionAsync(ConfiguracionUsuario configuracion)
-    {
-        string json = System.Text.Json.JsonSerializer.Serialize(configuracion);
-        await File.WriteAllTextAsync(_filePath, json);
-    }
-
-    private async Task<ConfiguracionUsuario> LoadConfiguracionAsync()
-    {
-        if (!File.Exists(_filePath))
-        {
-            return new ConfiguracionUsuario();
-        }
-
-        string json = await File.ReadAllTextAsync(_filePath);
-        return System.Text.Json.JsonSerializer.Deserialize<ConfiguracionUsuario>(json) ?? new ConfiguracionUsuario();
+        var cfg = await LoadAsync() ?? new ConfiguracionUsuario();
+        cfg.OrdenPrioridades = new List<string> { primera, segunda, tercera };
+        await SaveAsync(cfg);
     }
 
     public async Task SavePreferenciasAsync(ConfiguracionUsuario nuevasPrefs)
     {
-        var cfg = await GetUsuarioAsync() ?? new ConfiguracionUsuario();
+        var cfg = await LoadAsync() ?? new ConfiguracionUsuario();
 
         if (!string.IsNullOrWhiteSpace(nuevasPrefs.PreferenciaDificultad))
             cfg.PreferenciaDificultad = nuevasPrefs.PreferenciaDificultad;
@@ -90,9 +67,16 @@ public class UsuarioService
 
     private async Task SaveAsync(ConfiguracionUsuario cfg)
     {
-        using var fs = File.Create(_filePath);
-        await JsonSerializer.SerializeAsync(fs, cfg, _jsonOpts);
-        await fs.FlushAsync();
+        string json = JsonSerializer.Serialize(cfg, _jsonOpts);
+        await File.WriteAllTextAsync(_filePath, json);
+    }
+
+    private async Task<ConfiguracionUsuario?> LoadAsync()
+    {
+        if (!File.Exists(_filePath)) return new ConfiguracionUsuario();
+
+        string json = await File.ReadAllTextAsync(_filePath);
+        return JsonSerializer.Deserialize<ConfiguracionUsuario>(json, _jsonOpts);
     }
 
     public Task ClearAsync()

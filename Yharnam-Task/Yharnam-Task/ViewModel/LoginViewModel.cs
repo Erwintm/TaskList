@@ -1,7 +1,5 @@
-﻿using CommunityToolkit.Maui.Extensions;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Diagnostics;
 using Yharnam_Task.Models;
 using Yharnam_Task.Services;
 using Yharnam_Task.View;
@@ -42,20 +40,15 @@ public partial class LoginViewModel : ObservableObject
 
             var prefs = new ConfiguracionUsuario();
 
-            prefs.PreferenciaDificultad = await MostrarPopupAsync("¿Qué dificultad prefieres?", new[] { "Fácil", "Normal", "Difícil" });
-            prefs.PreferenciaPrioridad = await MostrarPopupAsync("¿Qué prioridad te interesa?", new[] { "Alta", "Media", "Baja" });
-            prefs.PreferenciaDuracion = await MostrarPopupAsync("¿Qué duración te gusta?", new[] { "Corta", "Media", "Larga" });
+            prefs.PreferenciaDificultad = await MostrarPopupAsync("Prefieres realizar las tareas con DIFICULTAD...", new[] { "Facil", "Normal", "Dificil" });
+            prefs.PreferenciaPrioridad = await MostrarPopupAsync("Te gusta hacer las tareas con PRIORIDAD...", new[] { "Alta", "Media", "Baja" });
+            prefs.PreferenciaDuracion = await MostrarPopupAsync("Acostumbras realizar las tareas de DURACIÓN...", new[] { "Corta", "Media", "Larga" });
 
             await _usuarioService.SavePreferenciasAsync(prefs);
 
-            Debug.WriteLine("🔸 ✅ Preferencias guardadas, mostrando prioridades...");
-
-            // FLUJO COHESIVO DE PRIORIDADES
             var (primera, segunda, tercera) = await MostrarFlujoPrioridadesCohesivo();
 
             await _usuarioService.SavePrioridadesAsync(primera, segunda, tercera);
-
-            Debug.WriteLine("🔸 ✅ Navegando a MenuPage...");
 
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
@@ -78,20 +71,18 @@ public partial class LoginViewModel : ObservableObject
             "🎯 Prioridad Principal\n\n¿Qué factor es MÁS importante para ti?",
             null, 
             null,
-            new[] { "📊 Dificultad", "⏰ Tiempo de entrega", "🕒 Duración" }
+            new[] { "📊 Dificultad", "⏰ Tiempo de entrega", "🕒 Duracion" }
         );
 
         primera = primera.Replace("📊 ", "").Replace("⏰ ", "").Replace("🕒 ", "");
 
-        Debug.WriteLine($"🔸 Primera prioridad: {primera}");
-
-        var opcionesRestantes = new List<string> { "Dificultad", "Tiempo de entrega", "Duración" };
+        var opcionesRestantes = new List<string> { "Dificultad", "Tiempo de entrega", "Duracion" };
         opcionesRestantes.Remove(primera);
 
         var opcionesConEmojis = opcionesRestantes.Select(op =>
             op == "Dificultad" ? "📊 Dificultad" :
             op == "Tiempo de entrega" ? "⏰ Tiempo de entrega" :
-            "🕒 Duración"
+            "🕒 Duracion"
         ).ToArray();
 
         segunda = await Application.Current.MainPage.DisplayActionSheet(
@@ -103,16 +94,12 @@ public partial class LoginViewModel : ObservableObject
 
         segunda = segunda.Replace("📊 ", "").Replace("⏰ ", "").Replace("🕒 ", "");
 
-        Debug.WriteLine($"🔸 Segunda prioridad: {segunda}");
-
         opcionesRestantes.Remove(segunda);
         tercera = opcionesRestantes[0];
 
-        Debug.WriteLine($"🔸 Tercera prioridad: {tercera}");
-
         await Application.Current.MainPage.DisplayAlert(
             "✅ Prioridades Establecidas",
-            $"🎯 Tu orden de prioridades:\n\n" +
+            $"Tu orden de prioridades:\n\n" +
             $"🥇 1. {primera}\n" +
             $"🥈 2. {segunda}\n" +
             $"🥉 3. {tercera}\n\n" +
