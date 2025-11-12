@@ -43,6 +43,32 @@ public class UsuarioService
         await SaveAsync(cfg);
     }
 
+    public async Task SavePrioridadesAsync(string primera, string segunda, string tercera)
+    {
+        var configuracion = await LoadConfiguracionAsync();
+
+        configuracion.OrdenPrioridades = new List<string> { primera, segunda, tercera };
+
+        await SaveConfiguracionAsync(configuracion);
+    }
+
+    private async Task SaveConfiguracionAsync(ConfiguracionUsuario configuracion)
+    {
+        string json = System.Text.Json.JsonSerializer.Serialize(configuracion);
+        await File.WriteAllTextAsync(_filePath, json);
+    }
+
+    private async Task<ConfiguracionUsuario> LoadConfiguracionAsync()
+    {
+        if (!File.Exists(_filePath))
+        {
+            return new ConfiguracionUsuario();
+        }
+
+        string json = await File.ReadAllTextAsync(_filePath);
+        return System.Text.Json.JsonSerializer.Deserialize<ConfiguracionUsuario>(json) ?? new ConfiguracionUsuario();
+    }
+
     public async Task SavePreferenciasAsync(ConfiguracionUsuario nuevasPrefs)
     {
         var cfg = await GetUsuarioAsync() ?? new ConfiguracionUsuario();
