@@ -20,7 +20,6 @@ namespace Yharnam_Task.ViewModel
             }
         }
 
-        // Campos de entrada
         private string nuevoTitulo;
         public string NuevoTitulo
         {
@@ -35,12 +34,14 @@ namespace Yharnam_Task.ViewModel
             set { nuevaDescripcion = value; OnPropertyChanged(); }
         }
 
-        private DateTime fechaEntrega = DateTime.Today;
+        public DateTime fechaEntrega = DateTime.Today;
         public DateTime FechaEntrega
         {
             get => fechaEntrega;
             set { fechaEntrega = value; OnPropertyChanged(); }
         }
+
+        public DateTime Today => DateTime.Today;
 
         private string dificultadSeleccionada = "Media";
         public string DificultadSeleccionada
@@ -49,25 +50,39 @@ namespace Yharnam_Task.ViewModel
             set { dificultadSeleccionada = value; OnPropertyChanged(); }
         }
 
-        private double tiempoEstimadoHoras = 1;
-        public double TiempoEstimadoHoras
+        private double tiempoEstimadoMinutos = 60;
+        public double TiempoEstimadoMinutos
         {
-            get => tiempoEstimadoHoras;
+            get => tiempoEstimadoMinutos;
             set
             {
-                if (tiempoEstimadoHoras != value)
+                double stepped = Math.Round(value / 15.0) * 15.0;
+                if (Math.Abs(tiempoEstimadoMinutos - stepped) > 0.001)
                 {
-                    tiempoEstimadoHoras = value;
+                    tiempoEstimadoMinutos = stepped;
                     OnPropertyChanged();
                     OnPropertyChanged(nameof(TiempoDisplay));
                 }
             }
         }
 
-        public string TiempoDisplay => $"{TiempoEstimadoHoras:0.##} h";
+        public string TiempoDisplay
+        {
+            get
+            {
+                int horas = (int)(tiempoEstimadoMinutos / 60);
+                int minutos = (int)(tiempoEstimadoMinutos % 60);
+
+                if (horas > 0 && minutos > 0)
+                    return $"{horas}h {minutos}m";
+                else if (horas > 0)
+                    return $"{horas}h";
+                else
+                    return $"{minutos}m";
+            }
+        }
 
         public ICommand AgregarTareaCommand { get; }
-
         public TareaViewModel()
         {
             tareaService = new TareaService();
@@ -83,18 +98,22 @@ namespace Yharnam_Task.ViewModel
             Tareas = await tareaService.CargarTareasAsync();
         }
 
-        private async Task AgregarTareaAsync()
+        public async Task<bool> AgregarTareaAsync()
         {
-            if (string.IsNullOrWhiteSpace(NuevoTitulo))
-                return;
+            string error = ValidarCampos();
+            if (error != "Good")
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", error, "Aceptar");
+                return false;
+            }
 
             var nuevaTarea = new Tarea
             {
-                Titulo = NuevoTitulo,
-                Descripcion = NuevaDescripcion,
+                Titulo = NuevoTitulo.Trim(),
+                Descripcion = NuevaDescripcion?.Trim() ?? string.Empty,
                 FechaEntrega = FechaEntrega,
                 Dificultad = DificultadSeleccionada,
-                TiempoEstimado = TimeSpan.FromHours(TiempoEstimadoHoras),
+                TiempoEstimado = TimeSpan.FromMinutes(TiempoEstimadoMinutos),
                 FechaCreacion = DateTime.Now,
                 Completada = false
             };
@@ -102,12 +121,36 @@ namespace Yharnam_Task.ViewModel
             Tareas.Add(nuevaTarea);
             await tareaService.GuardarTareasAsync(Tareas);
 
-            // Limpiar campos
             NuevoTitulo = string.Empty;
             NuevaDescripcion = string.Empty;
             FechaEntrega = DateTime.Today;
             DificultadSeleccionada = "Media";
-            TiempoEstimadoHoras = 1;
+            TiempoEstimadoMinutos = 60;
+
+            return true;
+        }
+
+        private string ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(NuevoTitulo?.Trim()))
+                return "Debes ingresar un título para la tarea.";
+
+            if (FechaEntrega < DateTime.Today)
+                return "La fecha de entrega no puede ser anterior a hoy.";
+
+            if (TiempoEstimadoMinutos < 15)
+                return "El tiempo estimado debe ser al menos de 15 minutos.";
+
+            if (TiempoEstimadoMinutos < 15)
+                return "El tiempo estimado debe ser como máximmo 8 horas.";
+
+            if (TiempoEstimadoMinutos > 480)
+                return "El tiempo estimado debe ser al menos de 15 minutos.";
+
+            if (!string.IsNullOrEmpty(NuevaDescripcion) && NuevaDescripcion.Length > 100)
+                return "La descripción no debe exceder los 50 caracteres.";
+
+            return "Good";
         }
     }
 }
