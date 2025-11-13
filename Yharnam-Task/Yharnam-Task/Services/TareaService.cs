@@ -31,5 +31,13 @@ namespace Yharnam_Task.Services
             using var stream = File.Create(filePath);
             await JsonSerializer.SerializeAsync(stream, tareas, options);
         }
+
+        public Task ClearAsync()
+        {
+            if (File.Exists(filePath)) File.Delete(filePath);
+
+            return Task.CompletedTask;
+        }
+
     }
 }
