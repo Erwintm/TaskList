@@ -392,30 +392,6 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
-  
-    <!--
-    <Style TargetType="TitleBar">
-        <Setter Property="MinimumHeightRequest" Value="32"/>
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="TitleActiveStates">
-                    <VisualState x:Name="TitleBarTitleActive">
-                        <VisualState.Setters>
-                            <Setter Property="BackgroundColor" Value="Transparent" />
-                            <Setter Property="ForegroundColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="TitleBarTitleInactive">
-                        <VisualState.Setters>
-                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
-                            <Setter Property="ForegroundColor" Value="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-    </Style>
-    -->
 
     <Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="Padding" Value="0"/>
@@ -446,6 +422,48 @@
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource White}}" />
         <Setter Property="UnselectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray950}}" />
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
+    </Style>
+
+    <!-- 🎨 Estilos nuevos para Yharnam Task (los que usamos en tus páginas) -->
+
+    <!-- Título principal / nombre de app -->
+    <Style TargetType="Label" x:Key="HeadingLabelStyle">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+    </Style>
+
+    <!-- Subtítulo o texto suave -->
+    <Style TargetType="Label" x:Key="SubtitleLabelStyle">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+    </Style>
+
+    <!-- Label de campo (“Tu nombre”, etc.) -->
+    <Style TargetType="Label" x:Key="FieldLabelStyle">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="0,8,0,0" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+    </Style>
+
+    <!-- Entry principal “bonito” -->
+    <Style TargetType="Entry" x:Key="PrimaryEntryStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource CardBackgroundColor}" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource EntryPlaceholderColor}" />
+        <Setter Property="Margin" Value="0,4,0,0" />
+    </Style>
+
+    <!-- Botón principal -->
+    <Style TargetType="Button" x:Key="PrimaryButtonStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="CornerRadius" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="HeightRequest" Value="44" />
+        <Setter Property="Margin" Value="0,16,0,0" />
     </Style>
 
 </ResourceDictionary>

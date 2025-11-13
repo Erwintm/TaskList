@@ -2,15 +2,90 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Yharnam_Task.View.LoginPage"
-             Title="LoginPage">
-    <VerticalStackLayout Padding="32" Spacing="16" VerticalOptions="Center">
-        <Label Text="Tu nombre" FontSize="16" HorizontalOptions="Center"/>
-        <Entry x:Name="NombreEntry"
-           Placeholder="Escribe tu nombre"
-           Text="{Binding Nombre}" />
-        <Button Text="Aceptar"
-            Command="{Binding AceptarCommand}" />
-        <ActivityIndicator IsRunning="{Binding IsBusy}"
-                       IsVisible="{Binding IsBusy}" />
-    </VerticalStackLayout>
+             Title="Login"
+             BackgroundColor="{StaticResource BackgroundColorLight}">
+
+    <!-- 🔹 Recursos locales para no depender de Colors.xaml -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BackgroundColorLight">#F4F6FB</Color>
+            <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
+
+            <Color x:Key="TextPrimaryColor">#1F2933</Color>
+            <Color x:Key="TextSecondaryColor">#6B7280</Color>
+            <Color x:Key="EntryPlaceholderColor">#9CA3AF</Color>
+
+            <Style TargetType="Label" x:Key="HeadingLabelStyle">
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="SubtitleLabelStyle">
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+            </Style>
+
+            <Style TargetType="Label" x:Key="FieldLabelStyle">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="0,8,0,0" />
+                <Setter Property="TextColor" Value="{StaticResource TextSecondaryColor}" />
+            </Style>
+
+            <Style TargetType="Entry" x:Key="PrimaryEntryStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource CardBackgroundColor}" />
+                <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource EntryPlaceholderColor}" />
+                <Setter Property="Margin" Value="0,4,0,0" />
+            </Style>
+
+            <Style TargetType="Button" x:Key="PrimaryButtonStyle">
+                <Setter Property="BackgroundColor" Value="#4A90E2" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="18" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="44" />
+                <Setter Property="Margin" Value="0,16,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Padding="24">
+        <Frame CornerRadius="24"
+               Padding="24"
+               HasShadow="True"
+               BackgroundColor="{StaticResource CardBackgroundColor}"
+               VerticalOptions="Center"
+               HorizontalOptions="FillAndExpand"
+               BorderColor="#E5E7EB">
+
+            <VerticalStackLayout Spacing="16">
+
+                <Label Text="Yharnam Task"
+                       Style="{StaticResource HeadingLabelStyle}" />
+
+                <Label Text="Ingresa tu nombre para continuar"
+                       Style="{StaticResource SubtitleLabelStyle}" />
+
+                <Label Text="Tu nombre"
+                       Style="{StaticResource FieldLabelStyle}" />
+
+                <Entry x:Name="NombreEntry"
+                       Placeholder="Escribe tu nombre"
+                       Text="{Binding Nombre}"
+                       Style="{StaticResource PrimaryEntryStyle}" />
+
+                <Button Text="Aceptar"
+                        Command="{Binding AceptarCommand}"
+                        Style="{StaticResource PrimaryButtonStyle}" />
+
+                <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                   IsVisible="{Binding IsBusy}"
+                                   HorizontalOptions="Center"
+                                   Margin="0,8,0,0"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>
