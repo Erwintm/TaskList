@@ -8,44 +8,54 @@ namespace Yharnam_Task.Services
     {
         public static double CalcularPrioridad(Tarea tarea, ConfiguracionUsuario prefs)
         {
-            System.Diagnostics.Debug.WriteLine($"Orden: {string.Join(", ", prefs.OrdenPrioridades)}");
-
             if (prefs == null || prefs.OrdenPrioridades == null || prefs.OrdenPrioridades.Count < 3)
                 return 0;
 
-            System.Diagnostics.Debug.WriteLine($"Orden: {string.Join(", ", prefs.OrdenPrioridades)}");
-
             var pesos = new Dictionary<string, double>
-            {
-                { prefs.OrdenPrioridades[0], 0.5 },
-                { prefs.OrdenPrioridades[1], 0.3 },
-                { prefs.OrdenPrioridades[2], 0.2 }
-            };
+    {
+        { prefs.OrdenPrioridades[0], 0.5 },
+        { prefs.OrdenPrioridades[1], 0.3 },
+        { prefs.OrdenPrioridades[2], 0.2 }
+    };
 
             double puntajeTotal = 0;
+            double pDificultad = 0, pDuracion = 0, pFecha = 0;
 
             foreach (var (clave, peso) in pesos)
             {
                 switch (clave)
                 {
                     case "Dificultad":
-                        puntajeTotal += peso * PuntuarDificultad(tarea.Dificultad, prefs.PreferenciaDificultad);
+                        pDificultad = PuntuarDificultad(tarea.Dificultad, prefs.PreferenciaDificultad);
+                        puntajeTotal += peso * pDificultad;
                         break;
 
                     case "Tiempo de entrega":
                         if (tarea.FechaEntrega.HasValue)
-                            puntajeTotal += peso * PuntuarTiempoEntrega(tarea.FechaEntrega.Value);
+                        {
+                            pFecha = PuntuarTiempoEntrega(tarea.FechaEntrega.Value);
+                            puntajeTotal += peso * pFecha;
+                        }
                         break;
 
                     case "Duracion":
                         if (tarea.TiempoEstimado.HasValue)
-                            puntajeTotal += peso * PuntuarDuracion(tarea.TiempoEstimado.Value, prefs.PreferenciaDuracion);
+                        {
+                            pDuracion = PuntuarDuracion(tarea.TiempoEstimado.Value, prefs.PreferenciaDuracion);
+                            puntajeTotal += peso * pDuracion;
+                        }
                         break;
                 }
             }
 
-            return puntajeTotal * 100;
+            tarea.PrioridadDificultad = pDificultad;
+            tarea.PrioridadDuracion = pDuracion;
+            tarea.PrioridadFecha = pFecha;
+            tarea.PrioridadCalculada = puntajeTotal * 100;
+
+            return tarea.PrioridadCalculada;
         }
+
 
         private static double PuntuarDificultad(string dificultad, string? preferenciaUsuario)
         {

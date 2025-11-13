@@ -13,7 +13,18 @@ namespace Yharnam_Task.Models
         public TimeSpan? TiempoEstimado { get; set; }
         public bool Completada { get; set; }
 
+
+
+
         [System.Text.Json.Serialization.JsonIgnore]
         public double PrioridadCalculada { get; set; }
+        public double PrioridadDificultad { get; set; }
+        public double PrioridadDuracion { get; set; }
+        public double PrioridadFecha { get; set; }
+
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string PrioridadResumen =>
+            $"Dif: {PrioridadDificultad:F2}  Dur: {PrioridadDuracion:F2}  Ent: {PrioridadFecha:F2}";
+
     }
 }
