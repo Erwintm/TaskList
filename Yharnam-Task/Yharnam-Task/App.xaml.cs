@@ -27,6 +27,9 @@ public partial class App : Application
 #if DEBUG
         var usuarioService = new Services.UsuarioService();
         //usuarioService.ClearAsync();
+
+        var tareaService = new Services.TareaService();
+        //tareaService.ClearAsync();
 #endif
         VerificarUsuario(loginPage);
     }

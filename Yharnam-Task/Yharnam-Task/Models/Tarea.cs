@@ -12,6 +12,8 @@ namespace Yharnam_Task.Models
         public string Dificultad { get; set; } = "Media";
         public TimeSpan? TiempoEstimado { get; set; }
         public bool Completada { get; set; }
-        public double Prioridad { get; set; }
+
+        [System.Text.Json.Serialization.JsonIgnore]
+        public double PrioridadCalculada { get; set; }
     }
 }
