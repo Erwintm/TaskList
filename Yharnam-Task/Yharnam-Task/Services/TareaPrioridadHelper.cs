@@ -13,8 +13,8 @@ namespace Yharnam_Task.Services
 
             var pesos = new Dictionary<string, double>
     {
-        { prefs.OrdenPrioridades[0], 0.5 },
-        { prefs.OrdenPrioridades[1], 0.3 },
+        { prefs.OrdenPrioridades[0], 1 },
+        { prefs.OrdenPrioridades[1], 0.5 },
         { prefs.OrdenPrioridades[2], 0.2 }
     };
 
@@ -33,7 +33,7 @@ namespace Yharnam_Task.Services
                     case "Tiempo de entrega":
                         if (tarea.FechaEntrega.HasValue)
                         {
-                            pFecha = PuntuarTiempoEntrega(tarea.FechaEntrega.Value);
+                            pFecha = PuntuarTiempoEntrega(tarea.FechaEntrega.Value, prefs.PreferenciaPrioridad);
                             puntajeTotal += peso * pFecha;
                         }
                         break;
@@ -56,32 +56,44 @@ namespace Yharnam_Task.Services
             return tarea.PrioridadCalculada;
         }
 
-
         private static double PuntuarDificultad(string dificultad, string? preferenciaUsuario)
         {
             double valor = dificultad switch
             {
-                "Fácil" => 0.3,
-                "Media" => 0.6,
-                "Difícil" => 1.0,
+                "Fácil" => 0.1,
+                "Media" => 0.3,
+                "Difícil" => 0.5,
                 _ => 0
             };
 
-            if (!string.IsNullOrEmpty(preferenciaUsuario) &&
-                dificultad.Equals(preferenciaUsuario, StringComparison.OrdinalIgnoreCase))
-                valor += 0.1;
+            if (!string.IsNullOrEmpty(preferenciaUsuario) && NormalizarTexto(dificultad).Equals(NormalizarTexto(preferenciaUsuario), 
+                StringComparison.OrdinalIgnoreCase))
+                valor += 0.5;
 
-            return Math.Min(valor, 1.0);
+            return valor;
         }
 
-        private static double PuntuarTiempoEntrega(DateTime fechaEntrega)
+        private static double PuntuarTiempoEntrega(DateTime fechaEntrega, string? preferenciaUsuario)
         {
             var diasRestantes = (fechaEntrega - DateTime.Today).TotalDays;
+            double valor;
 
-            if (diasRestantes <= 1) return 1.0;   
-            if (diasRestantes <= 3) return 0.7;
-            if (diasRestantes <= 7) return 0.4;
-            return 0.2; 
+            if (diasRestantes <= 1) valor = 0.4;
+            else if (diasRestantes <= 3) valor = 0.3;
+            else if (diasRestantes <= 7) valor = 0.2;
+            else valor = 0.1;
+
+            if (!string.IsNullOrEmpty(preferenciaUsuario))
+            {
+                if ((preferenciaUsuario.Equals("Alta", StringComparison.OrdinalIgnoreCase) && diasRestantes <= 1) ||
+                    (preferenciaUsuario.Equals("Media", StringComparison.OrdinalIgnoreCase) && diasRestantes <= 3) ||
+                    (preferenciaUsuario.Equals("Baja", StringComparison.OrdinalIgnoreCase) && diasRestantes > 7))
+                {
+                    valor += 0.7;
+                }
+            }
+
+            return valor;
         }
 
         private static double PuntuarDuracion(TimeSpan duracion, string? preferenciaUsuario)
@@ -89,9 +101,9 @@ namespace Yharnam_Task.Services
             double minutos = duracion.TotalMinutes;
             double valor = minutos switch
             {
-                <= 30 => 0.3,
-                <= 120 => 0.6,
-                _ => 1.0
+                <= 30 => 0.1,
+                <= 120 => 0.3,
+                _ => 0.5
             };
 
             if (!string.IsNullOrEmpty(preferenciaUsuario))
@@ -99,10 +111,27 @@ namespace Yharnam_Task.Services
                 if ((preferenciaUsuario == "Corta" && minutos <= 30) ||
                     (preferenciaUsuario == "Media" && minutos <= 120) ||
                     (preferenciaUsuario == "Larga" && minutos > 120))
-                    valor += 0.1;
+                    valor += 0.7; 
             }
 
-            return Math.Min(valor, 1.0);
+            return valor;
         }
+        private static string NormalizarTexto(string texto)
+        {
+            if (string.IsNullOrEmpty(texto)) return string.Empty;
+
+            var normalized = texto.Normalize(System.Text.NormalizationForm.FormD);
+            var sb = new System.Text.StringBuilder();
+
+            foreach (var c in normalized)
+            {
+                var unicodeCategory = System.Globalization.CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != System.Globalization.UnicodeCategory.NonSpacingMark)
+                    sb.Append(c);
+            }
+
+            return sb.ToString().Normalize(System.Text.NormalizationForm.FormC);
+        }
+
     }
 }
