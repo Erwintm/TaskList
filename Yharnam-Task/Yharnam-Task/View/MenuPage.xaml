@@ -11,40 +11,45 @@
         <x:Static Member="app:App.MainViewModel" xmlns:app="clr-namespace:Yharnam_Task"/>
     </ContentPage.BindingContext>
 
-    <Grid>
-        <ScrollView>
-            <VerticalStackLayout Spacing="25" Padding="20">
+    <Grid ColumnDefinitions="2*,1*" ColumnSpacing="0">
+        <Grid Grid.Column="0" RowDefinitions="Auto,*,Auto">
 
-                <VerticalStackLayout Spacing="15" Margin="0,40,0,0">
-                    <Label Text="Yharnam Task List" 
-                           FontSize="28" 
-                           FontAttributes="Bold" 
-                           TextColor="White"
-                           HorizontalOptions="Center" />
+            <VerticalStackLayout Grid.Row="0" Spacing="15" Padding="20,40,20,20">
+                <Label Text="Yharnam Task List" 
+                       FontSize="28" 
+                       FontAttributes="Bold" 
+                       TextColor="White"
+                       HorizontalOptions="Center" />
 
-                    <BoxView HeightRequest="1" Color="DimGray" />
+                <BoxView HeightRequest="1" Color="DimGray" />
 
-                    <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
-                        <Label Text="{Binding Tareas.Count, StringFormat='{0} tareas'}" 
-                               FontSize="12" 
-                               TextColor="Gainsboro"
-                               VerticalOptions="Center"/>
+                <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
+                    <Label Text="{Binding Tareas.Count, StringFormat='{0} tareas'}" 
+                           FontSize="12" 
+                           TextColor="Gainsboro"
+                           VerticalOptions="Center"/>
 
-                        <Button Grid.Column="1"
-                                Text="Filtrar"
-                                BackgroundColor="Transparent"
-                                TextColor="BlueViolet"
-                                FontSize="12"
-                                FontAttributes="Bold"
-                                BorderColor="BlueViolet"
-                                BorderWidth="1"
-                                HeightRequest="30"
-                                CornerRadius="8"
-                                Padding="15,0"/>
-                    </Grid>
-                </VerticalStackLayout>
+                    <Button Grid.Column="1"
+                            Text="Filtrar"
+                            BackgroundColor="Transparent"
+                            TextColor="BlueViolet"
+                            FontSize="12"
+                            FontAttributes="Bold"
+                            BorderColor="BlueViolet"
+                            BorderWidth="1"
+                            HeightRequest="30"
+                            CornerRadius="8"
+                            Padding="15,0"/>
+                </Grid>
+            </VerticalStackLayout>
 
+            <ScrollView Grid.Row="1" Padding="20,0,20,0">
                 <CollectionView ItemsSource="{Binding Tareas}">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="16"/>
+                    </CollectionView.ItemsLayout>
+
                     <CollectionView.EmptyView>
                         <VerticalStackLayout HorizontalOptions="Center" 
                                              VerticalOptions="Center" 
@@ -67,11 +72,7 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame BackgroundColor="#1E1E1E" 
-                                   Padding="20" 
-                                   Margin="0,8"
-                                   CornerRadius="15"
-                                   HasShadow="True"
-                                   BorderColor="DimGray">
+                                   HasShadow="True">
                                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" 
                                       ColumnDefinitions="*,Auto"
                                       RowSpacing="8">
@@ -128,7 +129,7 @@
                                              Color="BlueViolet"
                                              CornerRadius="2"
                                              WidthRequest="60"/>
-
+                                    <!--
                                     <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                                                  Orientation="Horizontal"
                                                  HorizontalOptions="End"
@@ -139,27 +140,157 @@
                                         <Label Text="{Binding PrioridadCalculada, StringFormat='Prioridad: {0:F1}'}"
                                                FontSize="12"
                                                FontAttributes="Bold"
-                                               TextColor="Orange"/>
+                                               TextColor="#FFFFFF"/>
                                     </StackLayout>
+                                    -->
                                 </Grid>
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+            </ScrollView>
 
-            </VerticalStackLayout>
-        </ScrollView>
+            <Button Grid.Row="2"
+                    Text="+" 
+                    FontSize="24"
+                    BackgroundColor="BlueViolet"
+                    TextColor="White"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    CornerRadius="30"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Margin="20,10,20,20"
+                    Clicked="OnPopupButtonClicked"/>
 
-        <Button Text="+" 
-                FontSize="24"
-                BackgroundColor="BlueViolet"
-                TextColor="White"
-                WidthRequest="60"
-                HeightRequest="60"
-                CornerRadius="30"
-                HorizontalOptions="End"
-                VerticalOptions="End"
-                Margin="20"
-                Clicked="OnPopupButtonClicked"/>
+        </Grid>
+
+        <Frame Grid.Column="1"
+               BackgroundColor="#1A1A1A"
+               Padding="20"
+               Margin="10"
+               CornerRadius="15"
+               BorderColor="DimGray"
+               HasShadow="True">
+
+            <ScrollView>
+                <VerticalStackLayout Spacing="20">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="⚙️ Preferencias" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+
+                        <BoxView HeightRequest="1" Color="BlueViolet"/>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout x:Name="PreferencesContainer" Spacing="15">
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="👤 Usuario" 
+                                   FontSize="12" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Gainsboro"/>
+                            <Label Text="{Binding ConfiguracionUsuario.Nombre}" 
+                                   FontSize="14" 
+                                   TextColor="White"
+                                   FontAttributes="Bold"/>
+                            <BoxView HeightRequest="1" Color="#2A2A2A" Margin="0,5,0,0"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="🎯 Dificultad preferida" 
+                                   FontSize="12" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Gainsboro"/>
+                            <Label Text="{Binding ConfiguracionUsuario.PreferenciaDificultad, StringFormat='{0}'}" 
+                                   FontSize="14" 
+                                   TextColor="LightBlue"/>
+                            <BoxView HeightRequest="1" Color="#2A2A2A" Margin="0,5,0,0"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="📊 Prioridad preferida" 
+                                   FontSize="12" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Gainsboro"/>
+                            <Label Text="{Binding ConfiguracionUsuario.PreferenciaPrioridad, StringFormat='{0}'}" 
+                                   FontSize="14" 
+                                   TextColor="LightGreen"/>
+                            <BoxView HeightRequest="1" Color="#2A2A2A" Margin="0,5,0,0"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="⏱️ Duración preferida" 
+                                   FontSize="12" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Gainsboro"/>
+                            <Label Text="{Binding ConfiguracionUsuario.PreferenciaDuracion, StringFormat='{0}'}" 
+                                   FontSize="14" 
+                                   TextColor="LightYellow"/>
+                            <BoxView HeightRequest="1" Color="#2A2A2A" Margin="0,5,0,0"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="📋 Orden de prioridades" 
+                                   FontSize="12" 
+                                   FontAttributes="Bold" 
+                                   TextColor="Gainsboro"/>
+
+                            <VerticalStackLayout Spacing="3" BindableLayout.ItemsSource="{Binding ConfiguracionUsuario.OrdenPrioridades}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid ColumnDefinitions="Auto,*">
+                                            <Label Grid.Column="0"
+                                                   Text="•" 
+                                                   FontSize="10" 
+                                                   TextColor="BlueViolet"
+                                                   VerticalOptions="Center"/>
+                                            <Label Grid.Column="1"
+                                                   Text="{Binding .}" 
+                                                   FontSize="11" 
+                                                   TextColor="LightGray"
+                                                   VerticalOptions="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </VerticalStackLayout>
+
+                            <BoxView HeightRequest="1" Color="#2A2A2A" Margin="0,5,0,0"/>
+                        </VerticalStackLayout>
+
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout x:Name="NoPreferencesView" 
+                                         IsVisible="False"
+                                         HorizontalOptions="Center" 
+                                         VerticalOptions="Center" 
+                                         Spacing="15"
+                                         Margin="0,50">
+                        <Label Text="⚙️" 
+                               FontSize="32" 
+                               HorizontalOptions="Center"
+                               TextColor="Gray"/>
+                        <Label Text="Sin configuración" 
+                               FontSize="14" 
+                               TextColor="Gainsboro"
+                               HorizontalOptions="Center"/>
+                        <Label Text="Configura tus preferencias" 
+                               FontSize="11" 
+                               TextColor="DarkGray"
+                               HorizontalOptions="Center"/>
+                        <Button Text="Configurar"
+                                BackgroundColor="BlueViolet"
+                                TextColor="White"
+                                CornerRadius="8"
+                                Padding="20,8"
+                                Clicked="OnConfigurarClicked"/>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Frame>
     </Grid>
 </ContentPage>
