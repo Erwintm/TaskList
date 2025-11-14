@@ -40,13 +40,25 @@ public partial class LoginViewModel : ObservableObject
 
             var prefs = new ConfiguracionUsuario();
 
-            prefs.PreferenciaDificultad = await MostrarPopupAsync("Prefieres realizar las tareas con DIFICULTAD...", new[] { "Facil", "Normal", "Dificil" });
-            prefs.PreferenciaPrioridad = await MostrarPopupAsync("Te gusta hacer las tareas con PRIORIDAD...", new[] { "Alta", "Media", "Baja" });
-            prefs.PreferenciaDuracion = await MostrarPopupAsync("Acostumbras realizar las tareas de DURACIÓN...", new[] { "Corta", "Media", "Larga" });
+            string dificultadRaw = await MostrarPopupAsync(
+            "📊 Prefieres realizar las tareas con DIFICULTAD...",
+            new[] { "🙂 Facil", "🥶 Normal", "😈 Dificil" });
+
+            string prioridadRaw = await MostrarPopupAsync(
+                "⏳ Te gusta hacer las tareas con PRIORIDAD de entrega...",
+                new[] { "🔥 Alta", "⚖️ Media", "🧊 Baja" });
+
+            string duracionRaw = await MostrarPopupAsync(
+                "⏱️ Acostumbras realizar las tareas de DURACIÓN...",
+                new[] { "🕐 Corta", "🕑 Media", "🕜 Larga" });
+
+            prefs.PreferenciaDificultad = QuitarEmoji(dificultadRaw);
+            prefs.PreferenciaPrioridad = QuitarEmoji(prioridadRaw);
+            prefs.PreferenciaDuracion = QuitarEmoji(duracionRaw);
 
             await _usuarioService.SavePreferenciasAsync(prefs);
 
-            var (primera, segunda, tercera) = await MostrarFlujoPrioridadesCohesivo();
+            var (primera, segunda, tercera) = await MostrarFlujoPrioridadesCohesivo(prefs, Nombre);
 
             await _usuarioService.SavePrioridadesAsync(primera, segunda, tercera);
 
@@ -61,45 +73,56 @@ public partial class LoginViewModel : ObservableObject
         }
     }
 
-    private async Task<(string primera, string segunda, string tercera)> MostrarFlujoPrioridadesCohesivo()
+    private async Task<(string primera, string segunda, string tercera)>
+    MostrarFlujoPrioridadesCohesivo(ConfiguracionUsuario prefs, string nombreUsuario)
     {
         string primera = string.Empty;
         string segunda = string.Empty;
         string tercera = string.Empty;
 
+        const string DIF = "📊 Dificultad";
+        const string TIE = "⏳ Tiempo de entrega";
+        const string DUR = "⏱️ Duracion";
+
         primera = await Application.Current.MainPage.DisplayActionSheet(
-            "🎯 Prioridad Principal\n\n¿Qué factor es MÁS importante para ti?",
-            null, 
+            "             🎯 Prioridad Principal\n¿Qué factor es MÁS importante para ti?",
             null,
-            new[] { "📊 Dificultad", "⏰ Tiempo de entrega", "🕒 Duracion" }
+            null,
+            new[] { DIF, TIE, DUR }
         );
 
-        primera = primera.Replace("📊 ", "").Replace("⏰ ", "").Replace("🕒 ", "");
+        primera = primera.Replace("📊 ", "").Replace("⏳ ", "").Replace("⏱️ ", "");
 
         var opcionesRestantes = new List<string> { "Dificultad", "Tiempo de entrega", "Duracion" };
         opcionesRestantes.Remove(primera);
 
         var opcionesConEmojis = opcionesRestantes.Select(op =>
-            op == "Dificultad" ? "📊 Dificultad" :
-            op == "Tiempo de entrega" ? "⏰ Tiempo de entrega" :
-            "🕒 Duracion"
+            op == "Dificultad" ? DIF :
+            op == "Tiempo de entrega" ? TIE :
+            DUR
         ).ToArray();
 
         segunda = await Application.Current.MainPage.DisplayActionSheet(
-            $"🎯 Segunda Prioridad\n\nPrimera: {primera}\n\nAhora elige la segunda:",
-            null, 
+            $"🎯 Ahora elige la segunda prioridad:\n(Elegiste como primera: {primera})",
+            null,
             null,
             opcionesConEmojis
         );
 
-        segunda = segunda.Replace("📊 ", "").Replace("⏰ ", "").Replace("🕒 ", "");
+        segunda = segunda.Replace("📊 ", "").Replace("⏳ ", "").Replace("⏱️ ", "");
 
         opcionesRestantes.Remove(segunda);
         tercera = opcionesRestantes[0];
 
         await Application.Current.MainPage.DisplayAlert(
-            "✅ Prioridades Establecidas",
-            $"Tu orden de prioridades:\n\n" +
+            $"¡Bienvenido {nombreUsuario}!",
+
+            $"Preferencias iniciales\n" +
+            $"📊Dificultad: {prefs.PreferenciaDificultad}\n" +
+            $"⏳Prioridad de entrega: {prefs.PreferenciaPrioridad}\n" +
+            $"⏱️Duración: {prefs.PreferenciaDuracion}\n\n" +
+
+            $"Tus prioridades finales\n" +
             $"🥇 1. {primera}\n" +
             $"🥈 2. {segunda}\n" +
             $"🥉 3. {tercera}\n\n" +
@@ -110,10 +133,24 @@ public partial class LoginViewModel : ObservableObject
         return (primera, segunda, tercera);
     }
 
+    private string QuitarEmoji(string texto)
+    {
+        if (string.IsNullOrEmpty(texto) || texto.Length <= 2)
+            return texto;
+
+        return texto.Substring(2).Trim();
+    }
+
     private async Task<string> MostrarPopupAsync(string pregunta, string[] opciones)
     {
-        string respuesta = await Application.Current!.MainPage.DisplayActionSheet(pregunta, "Cancelar", null, opciones);
+        string respuesta = await Application.Current!.MainPage.DisplayActionSheet(
+            pregunta,
+            null,         
+            null,
+            opciones);
+
         return respuesta ?? "";
     }
+
 }
 
