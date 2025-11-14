@@ -2,12 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Yharnam_Task.View.LoginPage"
-             Title="LoginPage">
+             BackgroundColor="#66000000"
+             Title="Yharnam-Task">
     <VerticalStackLayout Padding="32" Spacing="16" VerticalOptions="Center">
-        <Label Text="Tu nombre" FontSize="16" HorizontalOptions="Center"/>
-        <Entry x:Name="NombreEntry"
-           Placeholder="Escribe tu nombre"
-           Text="{Binding Nombre}" />
+        <Label Text="👋 ¡Hola y Bienvenido!"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"/>
+        <Label>
+            
+        </Label>
+
+        <Frame CornerRadius="12"
+               BackgroundColor="#2b2b2b"
+               Padding="12"
+               HasShadow="False">
+            <Entry x:Name="NombreEntry"
+                   Placeholder="Escribe tu nombre"
+                   Text="{Binding Nombre}"
+                   PlaceholderColor="#777"
+                   TextColor="White"/>
+        </Frame>
         <Button Text="Aceptar"
             Command="{Binding AceptarCommand}" />
         <ActivityIndicator IsRunning="{Binding IsBusy}"

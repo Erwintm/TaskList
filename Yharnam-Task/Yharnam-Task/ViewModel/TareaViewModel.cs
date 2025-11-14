@@ -10,6 +10,32 @@ namespace Yharnam_Task.ViewModel
         private readonly TareaService tareaService;
         private ObservableCollection<Tarea> tareas;
 
+        private ConfiguracionUsuario configuracionUsuario;
+        public ConfiguracionUsuario ConfiguracionUsuario
+        {
+            get => configuracionUsuario;
+            set
+            {
+                configuracionUsuario = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(TieneConfiguracion));
+            }
+        }
+
+        public bool TieneConfiguracion => ConfiguracionUsuario != null &&
+                                         !string.IsNullOrEmpty(ConfiguracionUsuario.Nombre);
+
+        private ObservableCollection<KeyValuePair<string, string>> preferenciasUsuario;
+        public ObservableCollection<KeyValuePair<string, string>> PreferenciasUsuario
+        {
+            get => preferenciasUsuario;
+            set
+            {
+                preferenciasUsuario = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ObservableCollection<Tarea> Tareas
         {
             get => tareas;
@@ -105,6 +131,12 @@ namespace Yharnam_Task.ViewModel
                 tareas = new ObservableCollection<Tarea>(
                     tareas.OrderByDescending(t => TareaPrioridadHelper.CalcularPrioridad(t, prefs))
                 );
+
+                ConfiguracionUsuario = prefs;
+            }
+            else
+            {
+                ConfiguracionUsuario = new ConfiguracionUsuario();
             }
 
             Tareas = tareas;

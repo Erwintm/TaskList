@@ -9,19 +9,24 @@ public partial class MenuPage : ContentPage
     public MenuPage()
     {
         InitializeComponent();
-        MostrarConfiguracionGuardada();
+        _ = CargarPreferenciasAsync();
     }
 
     private void OnPopupButtonClicked(object sender, EventArgs e)
     {
         var popup = new PopupView
         {
-            BindingContext = App.MainViewModel 
+            BindingContext = App.MainViewModel
         };
         this.ShowPopup(popup);
     }
 
-    private async void MostrarConfiguracionGuardada()
+    private async void OnConfigurarClicked(object sender, EventArgs e)
+    {
+        await DisplayAlert("Configurar", "Aquí irá la configuración de preferencias", "OK");
+    }
+
+    private async Task CargarPreferenciasAsync()
     {
         try
         {
@@ -30,21 +35,27 @@ public partial class MenuPage : ContentPage
 
             if (usuario == null)
             {
-                await DisplayAlert("Archivo", "No hay archivo de configuración guardado.", "OK");
+                NoPreferencesView.IsVisible = true;
+                PreferencesContainer.IsVisible = false;
                 return;
             }
 
+            NoPreferencesView.IsVisible = false;
+            PreferencesContainer.IsVisible = true;
+
             var json = JsonSerializer.Serialize(usuario, new JsonSerializerOptions { WriteIndented = true });
-
-            System.Diagnostics.Debug.WriteLine("=== CONFIGURACIÓN GUARDADA ===");
-            System.Diagnostics.Debug.WriteLine(json);
-            System.Diagnostics.Debug.WriteLine("===============================");
-
-            await DisplayAlert("Configuración guardada", json, "OK");
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", $"No se pudo leer la configuración:\n{ex.Message}", "OK");
+            System.Diagnostics.Debug.WriteLine($"Error al cargar preferencias: {ex.Message}");
+            NoPreferencesView.IsVisible = true;
+            PreferencesContainer.IsVisible = false;
         }
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        _ = CargarPreferenciasAsync();
     }
 }
